@@ -26,8 +26,8 @@ enum MatrixOrientation {
 }
 
 List<NodeInput> nodeInputFromJson(String str) {
-  var strngJ = jsonDecode(str);
-  return List<NodeInput>.from(strngJ.forEach((x) => NodeInput.fromJson(x)));
+  var strngJ = json.decode(str);
+  return List<NodeInput>.from(strngJ.map((x) => NodeInput.fromJson(x as Map<String,dynamic>)));
 
 }
 
